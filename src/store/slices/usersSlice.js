@@ -16,6 +16,7 @@ const usersSlice = createSlice({
         })
         builder.addCase(fetchUsers.fulfilled, (state, action) => {
             state.isLoading = false
+            state.data = action.payload
         })
         builder.addCase(fetchUsers.rejected, (state, action) => {
             state.isLoading = false
@@ -25,4 +26,4 @@ const usersSlice = createSlice({
 })
 
 
-export const usersReducer = usersSlice.reducers
+export const usersReducer = usersSlice.reducer
