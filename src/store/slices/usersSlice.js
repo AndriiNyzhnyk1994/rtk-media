@@ -4,9 +4,7 @@ import { fetchUsers } from "../thunks/fetchUsers";
 const usersSlice = createSlice({
     name: 'users',
     initialState: {
-        data: [
-            {"id": 1, "name": "Andrew"}
-        ],
+        data: [],
         isLoading: false,
         error: null
     },
