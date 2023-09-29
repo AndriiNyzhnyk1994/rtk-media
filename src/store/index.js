@@ -22,4 +22,3 @@ export * from './thunks/addUser'
 // we do implicit (неявный) import of all exported entities from
 // `fetchUsers` and then the data, that we have imported here to `index.js`
 // we exporting out to our components
-
