@@ -1,5 +1,34 @@
 {
-    "users": [{"id": 1, "name": "Andrew"}],
-    "albums": [],
-    "photos": []
+  "users": [
+    {
+      "id": 1,
+      "name": "Andrew"
+    },
+    {
+      "name": "Andrew Casper",
+      "id": 2
+    },
+    {
+      "name": "Rene Lebsack",
+      "id": 3
+    },
+    {
+      "name": "Juanita Corwin",
+      "id": 4
+    },
+    {
+      "name": "Jill Rau",
+      "id": 5
+    },
+    {
+      "name": "Lynn DuBuque",
+      "id": 6
+    },
+    {
+      "name": "Mae Kuhlman",
+      "id": 7
+    }
+  ],
+  "albums": [],
+  "photos": []
 }
