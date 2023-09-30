@@ -7,19 +7,17 @@ const fetchUsers = createAsyncThunk('users/fetch', async () => {
     
     //dev only!
     await pause(1000)
-    
     return response.data
 })
 
 
 //DEV ONLY!
+// artificial delay function (simulaation of throttling)
 const pause = (duration) => {
     return new Promise((resolve) => {
         setTimeout(resolve, duration)
     })
 }
-
-
 
 
 export {fetchUsers}
