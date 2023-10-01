@@ -28,20 +28,24 @@ function UsersList() {
         doFetchUsers()
     }, [doFetchUsers])
 
+    let content;
     if (isLoadingUsers) {
-        return <Skeleton times={12} className="h-10 w-full" />
-    }
-    if (loadingUsersError) {
-        return <div>Error data...</div>
+        content = <Skeleton times={12} className="h-10 w-full" />
+        // while we have pending status of c, we'll show sceleton loading
+    } else if (loadingUsersError) {
+        content = <div>Error data...</div>
+        // while we have an error in fetchUsers, we'll show error message
+    } else {
+        content = data.map((user) => {
+            return <div key={user.id} className="mb-2 border rounded">
+                <div className="flex p-2 justify-between items-center cursor-pointer">
+                    {user.name}
+                </div>
+            </div>
+        })
+        // while loading success we'll show our list of users
     }
 
-    const renderedUsers = data.map((user) => {
-        return <div key={user.id} className="mb-2 border rounded">
-            <div className="flex p-2 justify-between items-center cursor-pointer">
-                {user.name}
-            </div>
-        </div>
-    })
     const handleUserAdd = () => {
         doCreateUser()
     }
@@ -53,7 +57,7 @@ function UsersList() {
             <Button loading={isCreatingUser} onClick={handleUserAdd}>+ Add User</Button>
             {creatingUserError && 'Error creating user'}
         </div>
-        {renderedUsers}
+        {content}
     </div>
 }
 
