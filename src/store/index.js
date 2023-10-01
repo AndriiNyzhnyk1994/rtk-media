@@ -11,6 +11,7 @@ export const store = configureStore({
  
 export * from './thunks/fetchUsers'
 export * from './thunks/addUser'
+export * from './thunks/removeUser'
 // yes, it's export from another file, it's confusing
 // here we catch all exported data from `fetchUsers` (now it's only fetchUsers variable)
 // and creating export this catched data.
