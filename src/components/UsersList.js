@@ -4,6 +4,7 @@ import { fetchUsers, addUser } from "../store"
 import Skeleton from "./Skeleton"
 import Button from './Button'
 import { useThunk } from "../hooks/useThunk"
+import UsersListItem from "./UsersListItem"
 
 
 
@@ -37,11 +38,9 @@ function UsersList() {
         // while we have an error in fetchUsers, we'll show error message
     } else {
         content = data.map((user) => {
-            return <div key={user.id} className="mb-2 border rounded">
-                <div className="flex p-2 justify-between items-center cursor-pointer">
-                    {user.name}
-                </div>
-            </div>
+            return <UsersListItem key={user.id} user={user} />
+            
+            
         })
         // while loading success we'll show our list of users
     }
