@@ -39,8 +39,6 @@ function UsersList() {
     } else {
         content = data.map((user) => {
             return <UsersListItem key={user.id} user={user} />
-            
-            
         })
         // while loading success we'll show our list of users
     }
