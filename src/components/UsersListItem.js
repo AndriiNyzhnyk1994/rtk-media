@@ -3,6 +3,7 @@ import Button from './Button'
 import { removeUser } from '../store'
 import { useThunk } from '../hooks/useThunk'
 import ExpandeblePanel from './ExpandeblePanel'
+import AlbumsList from './AlbumsList'
 
 function UsersListItem({ user }) {
 
@@ -22,7 +23,7 @@ function UsersListItem({ user }) {
 
     return (
         <ExpandeblePanel header={header}>
-            CONTENT
+            <AlbumsList user={user} />
         </ExpandeblePanel>
     )
 }
