@@ -6,7 +6,7 @@ import { albumsApi } from "./apis/albumsApi";
 export const store = configureStore({
     reducer: {
         users: usersReducer,
-        albums: albumsApi.reducer
+        [albumsApi.reducerPath]: albumsApi.reducer
     }
 })
 // key 'albums' must be equal to reducerPath of albumsApi 
