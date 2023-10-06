@@ -33,6 +33,12 @@
       "id": 30
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": 10,
+      "title": "Hiking",
+      "userId": "23"
+    }
+  ],
   "photos": []
 }

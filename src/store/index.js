@@ -7,17 +7,26 @@ export const store = configureStore({
     reducer: {
         users: usersReducer,
         [albumsApi.reducerPath]: albumsApi.reducer
+    },
+    middleware: (getDefaultMiddleware) => {
+        return getDefaultMiddleware()
+        .concat(albumsApi.middleware)
     }
 })
 // key 'albums' must be equal to reducerPath of albumsApi 
-// otherwise (в противном случае) our cod will not work
+// otherwise (в противном случае) our code will not work
 // so we needn't { 'albums': albumsApi.reducer }
 // we need { [albumsApi.reducerPath]: albumsApi.reducer } 
  
 
+setupListeners(store.dispatch)
+
+
 export * from './thunks/fetchUsers'
 export * from './thunks/addUser'
 export * from './thunks/removeUser'
+export {useFetchAlbumsQuery} from './apis/albumsApi'
+
 // yes, it's export from another file, it's confusing
 // here we catch all exported data from `fetchUsers` (now it's only fetchUsers variable)
 // and creating export this catched data.
