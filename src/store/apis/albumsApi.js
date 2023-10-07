@@ -9,6 +9,10 @@ const albumsApi = createApi({
         return {
             fetchAlbums: builder.query({
                 query: (user) => {
+                    // parameter (user) in this function 
+                    // and argument (user) in hook's call `useFetchAlbumsQuery(users)`
+                    // is the same data.
+                    // So, what we put in `useFetchAlbumsQuery` as argument, that will be `user` param 
                     return {
                         url: '/albums',
                         params: {
