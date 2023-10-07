@@ -25,7 +25,7 @@ setupListeners(store.dispatch)
 export * from './thunks/fetchUsers'
 export * from './thunks/addUser'
 export * from './thunks/removeUser'
-export {useFetchAlbumsQuery} from './apis/albumsApi'
+export { useAddAlbumMutation, useFetchAlbumsQuery} from './apis/albumsApi'
 
 // yes, it's export from another file, it's confusing
 // here we catch all exported data from `fetchUsers` (now it's only fetchUsers variable)

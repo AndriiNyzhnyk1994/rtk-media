@@ -38,6 +38,16 @@
       "id": 10,
       "title": "Hiking",
       "userId": "23"
+    },
+    {
+      "userId": 23,
+      "title": "Handmade Concrete Sausages",
+      "id": 11
+    },
+    {
+      "userId": 24,
+      "title": "Handmade Bronze Chicken",
+      "id": 12
     }
   ],
   "photos": []
