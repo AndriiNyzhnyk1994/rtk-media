@@ -6,8 +6,19 @@ import Button from './Button';
 
 function AlbumsList({ user }) {
     const { data, error, isLoading } = useFetchAlbumsQuery(user)
+    // query hook for GET requests:
+    // 1. returns an object with data and loading (+ error) status
+    // 2. hook is calling automatically when our component did mount
+
     const [addAlbum, results] = useAddAlbumMutation()
-    
+    // mutatuin hook for POST, PUT, DELETE requests:
+    // 1. returns an ARRAY with callback (`addAlbum` in this case)
+    //    addAlbum is a function. This function accepts an argument 
+    //    that passed into  endpoint `addAlbum` inside `albumsApi`
+    // 2. also returned array have `result` element (object), that keep information
+    //    about result of our request (isError, isLoading, isSuccess...)
+    // 3. hook is calling by user with events (onClick, onChange ect.) 
+
     const handleAddAlbum = () => {
         addAlbum(user)
     }
