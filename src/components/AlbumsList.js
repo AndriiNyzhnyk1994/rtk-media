@@ -17,12 +17,12 @@ function AlbumsList({ user }) {
     //    that passed into  endpoint `addAlbum` inside `albumsApi`
     // 2. also returned array have `result` element (object), that keep information
     //    about result of our request (isError, isLoading, isSuccess...)
-    // 3. hook is calling by user with events (onClick, onChange ect.) 
+    // 3. mutation hook give you a function to run when you want
+    //    (onClick, onChange ect.) 
 
     const handleAddAlbum = () => {
         addAlbum(user)
     }
-
 
     let content;
     if (isLoading) {
