@@ -1,22 +1,6 @@
 {
   "users": [
     {
-      "name": "Spencer Lakin",
-      "id": 23
-    },
-    {
-      "name": "Sadie Sipes",
-      "id": 24
-    },
-    {
-      "name": "Ms. Daisy Toy",
-      "id": 25
-    },
-    {
-      "name": "Jeannie Moen",
-      "id": 26
-    },
-    {
       "name": "Ms. Edna Wolff",
       "id": 27
     },
@@ -35,154 +19,19 @@
   ],
   "albums": [
     {
-      "id": 10,
-      "title": "Hiking",
-      "userId": "23"
-    },
-    {
-      "userId": 23,
-      "title": "Handmade Concrete Sausages",
-      "id": 11
-    },
-    {
-      "userId": 24,
-      "title": "Handmade Bronze Chicken",
-      "id": 12
-    },
-    {
-      "userId": 24,
-      "title": "Licensed Wooden Pants",
-      "id": 13
-    },
-    {
-      "userId": 24,
-      "title": "Awesome Granite Chair",
-      "id": 14
-    },
-    {
-      "userId": 24,
-      "title": "Oriental Soft Keyboard",
-      "id": 15
-    },
-    {
-      "userId": 23,
-      "title": "Licensed Frozen Pants",
-      "id": 16
-    },
-    {
-      "userId": 23,
-      "title": "Unbranded Metal Table",
-      "id": 17
-    },
-    {
-      "userId": 23,
-      "title": "Unbranded Steel Bike",
-      "id": 18
-    },
-    {
-      "userId": 23,
-      "title": "Sleek Cotton Keyboard",
-      "id": 19
-    },
-    {
-      "userId": 23,
-      "title": "Bespoke Cotton Bike",
-      "id": 20
-    },
-    {
-      "userId": 24,
-      "title": "Unbranded Wooden Hat",
-      "id": 21
-    },
-    {
-      "userId": 24,
-      "title": "Licensed Rubber Shirt",
-      "id": 22
-    },
-    {
-      "userId": 26,
-      "title": "Electronic Soft Soap",
-      "id": 23
-    },
-    {
-      "userId": 26,
-      "title": "Rustic Metal Chicken",
-      "id": 24
-    },
-    {
-      "userId": 24,
-      "title": "Rustic Soft Cheese",
-      "id": 25
-    },
-    {
-      "userId": 26,
-      "title": "Unbranded Granite Ball",
-      "id": 26
-    },
-    {
-      "userId": 27,
-      "title": "Small Granite Cheese",
-      "id": 27
-    },
-    {
-      "userId": 26,
-      "title": "Rustic Soft Pants",
-      "id": 28
-    },
-    {
-      "userId": 27,
-      "title": "Unbranded Plastic Car",
-      "id": 29
-    },
-    {
-      "userId": 24,
-      "title": "Sleek Metal Chair",
-      "id": 30
-    },
-    {
       "userId": 28,
-      "title": "Modern Fresh Cheese",
-      "id": 31
+      "title": "Intelligent Plastic Salad",
+      "id": 1
     },
     {
-      "userId": 25,
-      "title": "Gorgeous Granite Fish",
-      "id": 32
+      "userId": 29,
+      "title": "Sleek Bronze Keyboard",
+      "id": 2
     },
     {
-      "userId": 25,
-      "title": "Oriental Granite Salad",
-      "id": 33
-    },
-    {
-      "userId": 23,
-      "title": "Recycled Metal Table",
-      "id": 34
-    },
-    {
-      "userId": 24,
-      "title": "Incredible Wooden Shoes",
-      "id": 35
-    },
-    {
-      "userId": 24,
-      "title": "Generic Concrete Shoes",
-      "id": 36
-    },
-    {
-      "userId": 24,
-      "title": "Oriental Rubber Chips",
-      "id": 37
-    },
-    {
-      "userId": 24,
-      "title": "Awesome Fresh Chicken",
-      "id": 38
-    },
-    {
-      "userId": 25,
-      "title": "Handmade Steel Chicken",
-      "id": 39
+      "userId": 27,
+      "title": "Refined Cotton Shirt",
+      "id": 3
     }
   ],
   "photos": []

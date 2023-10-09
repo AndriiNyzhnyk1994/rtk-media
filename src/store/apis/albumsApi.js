@@ -1,4 +1,4 @@
-import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { faker } from '@faker-js/faker'
 
 //DEV ONLY!
@@ -12,9 +12,9 @@ const pause = (duration) => {
 
 const albumsApi = createApi({
     reducerPath: 'albums',
-    baseQuery:  fetchBaseQuery({
+    baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:3005',
-        fetchFn: async(...args) => {
+        fetchFn: async (...args) => {
             // REMOVE FOR PRODUCTION
             // it's just a function that makes an artificial delay of response
             await pause(1000)
@@ -23,9 +23,18 @@ const albumsApi = createApi({
     }),
     endpoints(builder) {
         return {
+            removeAlbum: builder.mutation({
+                
+                query: (album) => {
+                    return {
+                        url: `/albums/${album.id}`,
+                        method: 'DELETE',
+                    }
+                }
+            }),
             addAlbum: builder.mutation({
                 invalidatesTags: (result, error, user) => {
-                    return [{type: 'Album', id: user.id}]
+                    return [{ type: 'Album', id: user.id }]
                 },
                 query: (user) => {
                     return {
@@ -37,12 +46,12 @@ const albumsApi = createApi({
                         }
                     }
                 }
-            }) ,
+            }),
             fetchAlbums: builder.query({
                 providesTags: (result, error, user) => {
-                    // the third parameter is argument of hook's calling
+                    // the third parameter is always argument of hook's calling
                     // in this case it would be `user`
-                    return [{type: 'Album', id: user.id}]
+                    return [{ type: 'Album', id: user.id }]
                 },
                 query: (user) => {
                     // parameter (user) in this function 
@@ -63,6 +72,7 @@ const albumsApi = createApi({
 })
 
 export const {
-     useAddAlbumMutation,
-     useFetchAlbumsQuery } = albumsApi
+    useAddAlbumMutation,
+    useFetchAlbumsQuery,
+    useRemoveAlbumMutation } = albumsApi
 export { albumsApi }
