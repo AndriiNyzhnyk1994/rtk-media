@@ -8,25 +8,40 @@
   "albums": [
     {
       "userId": 1,
-      "title": "Awesome Soft Towels",
-      "id": 4
+      "title": "Fantastic Wooden Car",
+      "id": 6
     },
     {
       "userId": 1,
-      "title": "Recycled Soft Chair",
-      "id": 5
+      "title": "Rustic Concrete Car",
+      "id": 7
     }
   ],
   "photos": [
     {
-      "albumId": 4,
-      "url": "https://loremflickr.com/150/150/abstract?lock=3718728642461696",
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=7107256076206080",
       "id": 1
     },
     {
-      "albumId": 5,
-      "url": "https://loremflickr.com/150/150/abstract?lock=7881154833154048",
+      "albumId": 6,
+      "url": "https://loremflickr.com/150/150/abstract?lock=6433031455768576",
       "id": 2
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=2531281225121792",
+      "id": 3
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=762877451436032",
+      "id": 4
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=7095888579133440",
+      "id": 5
     }
   ]
 }
