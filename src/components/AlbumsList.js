@@ -6,7 +6,7 @@ import Button from './Button';
 import AlbumsListItem from './AlbumsListItem';
 
 function AlbumsList({ user }) {
-    const { data, error, isLoading } = useFetchAlbumsQuery(user)
+    const { data, error, isFetching } = useFetchAlbumsQuery(user)
     // query hook for GET requests:
     // 1. returns an object with data and loading (+ error) status
     // 2. hook is calling automatically when our component did mount
@@ -26,7 +26,7 @@ function AlbumsList({ user }) {
     }
 
     let content;
-    if (isLoading) {
+    if (isFetching) {
         content = <Skeleton className='h-10 w-full' times={3} />
     } else if (error) {
         content = <div>Error loading albums</div>

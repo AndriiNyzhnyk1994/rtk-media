@@ -1,23 +1,26 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { usersReducer } from "./slices/usersSlice";
-import {setupListeners} from '@reduxjs/toolkit/query'
+import { setupListeners } from '@reduxjs/toolkit/query'
 import { albumsApi } from "./apis/albumsApi";
+import { photosApi } from "./apis/photosApi";
 
 export const store = configureStore({
     reducer: {
         users: usersReducer,
-        [albumsApi.reducerPath]: albumsApi.reducer
+        [albumsApi.reducerPath]: albumsApi.reducer,
+        [photosApi.reducerPath]: photosApi.reducer
     },
     middleware: (getDefaultMiddleware) => {
         return getDefaultMiddleware()
-        .concat(albumsApi.middleware)
+            .concat(albumsApi.middleware)
+            .concat(photosApi.middleware)
     }
 })
 // key 'albums' must be equal to reducerPath of albumsApi 
 // otherwise (в противном случае) our code will not work
 // so we needn't { 'albums': albumsApi.reducer } from now.
 // We need { [albumsApi.reducerPath]: albumsApi.reducer } syntax 
- 
+
 
 setupListeners(store.dispatch)
 
@@ -25,7 +28,16 @@ setupListeners(store.dispatch)
 export * from './thunks/fetchUsers'
 export * from './thunks/addUser'
 export * from './thunks/removeUser'
-export { useAddAlbumMutation, useFetchAlbumsQuery, useRemoveAlbumMutation} from './apis/albumsApi'
+export {
+    useAddAlbumMutation,
+    useFetchAlbumsQuery,
+    useRemoveAlbumMutation
+} from './apis/albumsApi'
+export {
+    useFetchPhotosQuery,
+    useAddPhotoMutation,
+    useRemovePhotoMutation
+} from './apis/photosApi'
 
 // yes, it's export from another file, it's confusing
 // here we catch all exported data from `fetchUsers` (now it's only fetchUsers variable)

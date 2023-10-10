@@ -3,6 +3,8 @@ import React from 'react'
 import ExpandeblePanel from './ExpandeblePanel'
 import Button from './Button'
 import { useRemoveAlbumMutation } from '../store'
+import PhotosList from './PhotosList'
+
 
 function AlbumsListItem({ album }) {
 
@@ -24,7 +26,7 @@ function AlbumsListItem({ album }) {
     </>
 
     return <ExpandeblePanel key={album.id} header={header}>
-        List of photos in the album
+        <PhotosList album={album}/>
     </ExpandeblePanel>
 }
 

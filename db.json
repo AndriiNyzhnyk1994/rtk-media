@@ -1,27 +1,20 @@
 {
   "users": [
     {
-      "name": "Ms. Edna Wolff",
-      "id": 27
-    },
-    {
-      "name": "Bessie Gulgowski",
-      "id": 28
-    },
-    {
-      "name": "Reginald Wilkinson",
-      "id": 29
-    },
-    {
-      "name": "Jonathan Klein",
-      "id": 30
+      "name": "Karla Ward",
+      "id": 1
     }
   ],
   "albums": [
     {
-      "userId": 27,
-      "title": "Refined Cotton Shirt",
-      "id": 3
+      "userId": 1,
+      "title": "Awesome Soft Towels",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Recycled Soft Chair",
+      "id": 5
     }
   ],
   "photos": []
