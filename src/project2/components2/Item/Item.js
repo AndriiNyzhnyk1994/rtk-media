@@ -7,9 +7,9 @@ function Item({ itemInfo }) {
     let isTrimmed = false
     let itemTitle = itemInfo.title
 
-    if (itemTitle.length > 30) {
+    if (itemTitle.length > 25) {
         isTrimmed = true
-        itemTitle = itemInfo.title.slice(0, 30)
+        itemTitle = itemInfo.title.slice(0, 25)
     }
 
     return (
@@ -18,7 +18,7 @@ function Item({ itemInfo }) {
                 <img src={itemInfo.mainImage} alt="item-photo" />
             </div>
             <div className={`${s.price} font-bold text-xl`}>
-                <span className='py-3 px-3'>${'13.99'}</span>
+                <span className='py-3 px-3'>${itemInfo.price}</span>
             </div>
             <div className={s.itemName}>
                 <span>{itemTitle} {isTrimmed && '...'}</span>
