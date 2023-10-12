@@ -12,15 +12,10 @@ function Item({ itemInfo }) {
         itemTitle = itemInfo.title.slice(0, 30)
     }
 
-
-
-
-    let [isFavorite, setIsFavorite] = useState(false)
-
     return (
         <div className={s.item + ' hover:bg-gray-200'}>
             <div className={s.itemImg}>
-                <img src={soldierboy} alt="item-photo" />
+                <img src={itemInfo.mainImage} alt="item-photo" />
             </div>
             <div className={`${s.price} font-bold text-xl`}>
                 <span className='py-3 px-3'>${'13.99'}</span>
@@ -32,12 +27,10 @@ function Item({ itemInfo }) {
                 <button className='bg-blue-500 hover:bg-blue-700 text-xs  text-white font-medium py-2 px-4 rounded mt-1'>
                     ADD TO CART
                 </button>
-                {isFavorite
-                    ? <MdFavorite className={s.favorite} onClick={() => { setIsFavorite((prev) => !prev) }} size={'1.5rem'} />
-                    : <MdFavoriteBorder onClick={() => { setIsFavorite((prev) => !prev) }} className={s.favorite} size={'1.5rem'} />
+                {itemInfo.isFavorite
+                    ? <MdFavorite className={s.favorite} size={'1.5rem'} />
+                    : <MdFavoriteBorder className={s.favorite} size={'1.5rem'} />
                 }
-
-
             </div>
         </div>
     )
