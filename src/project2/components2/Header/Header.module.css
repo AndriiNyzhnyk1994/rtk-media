@@ -1,0 +1,10 @@
+.blackHeader {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.shopHeader {
+    margin: 0 auto;
+}

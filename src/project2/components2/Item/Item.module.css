@@ -1,0 +1,32 @@
+.item {
+    box-sizing: border-box;
+    width: 220px;
+    max-height: 350px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buyOptions {
+    display: flex;
+}
+
+.itemImg {
+    padding: 2px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.itemName {
+    width: 100%;
+    text-align: center;
+}
