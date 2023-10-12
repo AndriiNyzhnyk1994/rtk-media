@@ -14,8 +14,12 @@
     align-items: center;
 }
 
+
 .buyOptions {
+    width: 90%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .itemImg {
@@ -29,4 +33,17 @@
 .itemName {
     width: 100%;
     text-align: center;
+}
+
+.price {
+    width: 100%;
+    text-align: center;
+}
+
+.item:hover .itemName {
+    text-decoration: underline;
+}
+
+.favorite:hover {
+    opacity: 0.8;
 }
