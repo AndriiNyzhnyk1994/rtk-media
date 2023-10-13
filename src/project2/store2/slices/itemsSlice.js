@@ -7,7 +7,7 @@ const initialState = {
         id: nanoid(),
         title: 'Soldier Boy With Helmet (The Boys)',
         mainImage: 'https://cdn.awsli.com.br/300x300/84/84034/produto/226137463/pop--solider-boy-c-800-gm7wwr4x1i.jpg',
-        price: 13.99,
+        price: 19.99,
         description: `It's a cool figure of soldier from The Boys series`,
         isFavorite: false,
     },
@@ -15,7 +15,7 @@ const initialState = {
         id: nanoid(),
         title: 'Soldier Boy No Helmet (The Boys)',
         mainImage: 'https://down-th.img.susercontent.com/file/th-11134207-7r98o-lkvwschotvmy98',
-        price: 13.99,
+        price: 19.99,
         description: `It's a cool figure of soldier from The Boys series`,
         isFavorite: false
     },
@@ -23,7 +23,7 @@ const initialState = {
         id: nanoid(),
         title: 'Homelander Levitating (The Boys)',
         mainImage: 'https://i.citrus.world/imgcache/size_800/uploads/shop/2/d/2d15be086c80ab607f5b6171fb506bee.jpg',
-        price: 14.99,
+        price: 29.99,
         description: `It's a cool figure of Homelander from The Boys series`,
         isFavorite: false
     },
@@ -140,6 +140,8 @@ const initialState = {
         isFavorite: false
     },]
 }
+
+initialState.products = initialState.products.map(item => ({...item, category: 'Funko-Pop'}))
 
 
 const itemsSlice = createSlice({
