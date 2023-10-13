@@ -1,0 +1,30 @@
+.productContainer {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 500px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.imageBox {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    width: 500px;
+    min-height: 250px;
+}
+.imageBox img {
+    width: 100%;
+    min-height: 50%;
+    object-fit: cover;
+}
+
+.itemInfo {
+    max-width: 500px;
+    min-height: 280px;
+    min-width: 280px;
+}

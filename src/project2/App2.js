@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 function App2() {
 
     const pageStatus = useSelector(state => state.pageStatus.status)
+    const currentItem = useSelector(state => state.pageStatus.currentItem)
 
 
     let content;
@@ -19,14 +20,16 @@ function App2() {
         content = <Favorites />
     }
     if (pageStatus === 'item') {
-        content = <ItemPage />
+        content = <ItemPage itemInfo={currentItem} />
     }
 
 
     return (
         <div>
             <Header mainTitle={'FANCY SHOP'} />
+            
             {content}
+            
         </div>
     )
 }

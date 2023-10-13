@@ -6,7 +6,7 @@ const pageStatusSlice = createSlice({
     name: 'pageStatus',
     initialState: {
         status: 'catalog',
-        currentItemPage: null
+        currentItem: null
     },
     reducers: {
         changeToCatalog: (state, action) => {
@@ -20,7 +20,7 @@ const pageStatusSlice = createSlice({
         },
         changeToItem: (state, action) => {
             state.status = 'item'
-            state.currentItemPage = action.payload.item
+            state.currentItem = action.payload.item
         },
     }
 }) 
