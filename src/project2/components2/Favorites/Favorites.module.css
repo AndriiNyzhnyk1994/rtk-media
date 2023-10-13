@@ -1,0 +1,9 @@
+.itemsCatalog {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 500px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

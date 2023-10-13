@@ -1,8 +1,9 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { addToUserFavorites, removeFromUserFavorites } from "./userSlice2";
 
 
-const itemsArray = [
-    {
+const initialState = {
+    products: [{
         id: nanoid(),
         title: 'Soldier Boy With Helmet (The Boys)',
         mainImage: 'https://cdn.awsli.com.br/300x300/84/84034/produto/226137463/pop--solider-boy-c-800-gm7wwr4x1i.jpg',
@@ -130,20 +131,40 @@ const itemsArray = [
         description: `It's a cool figure of soldier from The Boys series`,
         isFavorite: false
     },
-]
+    {
+        id: nanoid(),
+        title: 'Starlight (The Boys)',
+        mainImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLiJupLfwbXQVKpgdUSI52TCnaCL7e7E5hRpmpJ6R1GLVhMgfO7ll2BKB77k2IC4Y4L1I&usqp=CAU',
+        price: 13.99,
+        description: `It's a cool figure of Starlight from The Boys series`,
+        isFavorite: false
+    },]
+}
 
 
 const itemsSlice = createSlice({
     name: 'items',
-    initialState: itemsArray,
+    initialState,
     reducers: {
-        removeItem: (state, action) => {
-            const updated = state.filter(item => item.id !== action.payload.id)
-            state = updated
-        }
+        
+    },
+    extraReducers: (builder) => {
+        builder.addCase(addToUserFavorites, (state, action) => {
+            const item = state.products.find(item => item.id === action.payload.id)
+            if (item) {
+                item.isFavorite = true
+            }
+        })
+        builder.addCase(removeFromUserFavorites, (state, action) => {
+            const item = state.products.find(item => item.id === action.payload.id)
+            if (item) {
+                item.isFavorite = false
+            }
+        })
     }
-})
+}
+)
 
 
-export const {removeItem} = itemsSlice.actions
+export const { addToFavorites, removeFromFavorites } = itemsSlice.actions
 export const itemsReducer = itemsSlice.reducer
