@@ -45,10 +45,20 @@ function Item({ itemInfo }) {
                 <button className='bg-blue-500 hover:bg-blue-700 text-xs  text-white font-medium py-2 px-4 rounded mt-1'>
                     ADD TO CART
                 </button>
+                {/* FAVORITE ICONS */}
                 {itemInfo.isFavorite
-                    ? <MdFavorite onClick={handleRemoveFromFavorites} className={s.favorite} size={'1.5rem'} />
-                    : <MdFavoriteBorder onClick={handleAddToFavorites} className={s.favorite} size={'1.5rem'} />
+                    ? <MdFavorite
+                        onClick={handleRemoveFromFavorites}
+                        className={s.favorite}
+                        size={'1.5rem'}
+                    />
+                    : <MdFavoriteBorder
+                        onClick={handleAddToFavorites}
+                        className={s.favorite}
+                        size={'1.5rem'}
+                    />
                 }
+
             </div>
         </div>
     )

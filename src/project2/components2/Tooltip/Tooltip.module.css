@@ -1,0 +1,12 @@
+.tooltip {
+    position: absolute;
+    background-color: lightgray;
+    color: #fff;
+    padding: 2px;
+    border-radius: 5px;
+    top: -80px; /* Расположение подсказки над элементом */
+    left: 50%;
+    transform: translateX(-80%);
+    z-index: 999;
+    opacity: 0.9;
+  }
