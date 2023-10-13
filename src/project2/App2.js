@@ -3,30 +3,29 @@ import Header from './components2/Header/Header'
 import Catalog from './components2/Catalog/Catalog'
 import Favorites from './components2/Favorites/Favorites'
 import ItemPage from './components2/ItemPage/ItemPage'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 function App2() {
-    // it will be 'items', 'favorites', 'item'
-    const [pageStatus, setPageStatus] = useState('items')
 
-    const changePageStatus = (newStatus) => {
-        setPageStatus(newStatus)
-    }
-    
-    
-    
+    const pageStatus = useSelector(state => state.pageStatus.status)
+
+
     let content;
-    if( pageStatus === 'items') {
-        content = <Catalog/>
+    if (pageStatus === 'catalog') {
+        content = <Catalog />
     }
-    if(pageStatus === 'favorites') {
-        content = <Favorites/>
+    if (pageStatus === 'favorites') {
+        content = <Favorites />
     }
-    
+    if (pageStatus === 'item') {
+        content = <ItemPage />
+    }
+
 
     return (
         <div>
-            <Header changePageStatus={changePageStatus} mainTitle={'FANCY SHOP'}/>
+            <Header mainTitle={'FANCY SHOP'} />
             {content}
         </div>
     )

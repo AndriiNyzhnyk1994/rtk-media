@@ -1,19 +1,22 @@
 import React from 'react'
 import s from './Header.module.css'
+import { useDispatch } from 'react-redux'
+import { changeToCatalog, changeToFavorites } from '../../store2/slices/pageStatusSlice'
 
-function Header({mainTitle, changePageStatus}) {
+function Header({mainTitle}) {
+    const dispatch = useDispatch()
 
-    const handleItemsStatus = () => {
-        changePageStatus('items')
+    const handleCatalogStatus = () => {
+        dispatch(changeToCatalog())
     }
 
     const handleFavoritesStatus = () => {
-        changePageStatus('favorites')
+        dispatch(changeToFavorites())
     }
 
     return (
         <header className={s.blackHeader}>
-            <h1 onClick={handleItemsStatus} className={'font-sans text-xl cursor-pointer'}>{mainTitle}</h1>
+            <h1 onClick={handleCatalogStatus} className={'font-sans text-xl cursor-pointer'}>{mainTitle}</h1>
             <button onClick={handleFavoritesStatus}>Favorites</button>
         </header>
     )

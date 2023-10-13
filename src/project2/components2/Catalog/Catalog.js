@@ -4,17 +4,14 @@ import Item from '../Item/Item'
 import { useDispatch, useSelector } from 'react-redux'
 
 
-function Catalog({ changePageStatus }) {
+function Catalog() {
     const items = useSelector(state => state.items.products)
 
 
     let content;
     if (items.length) {
         content = items.map(item => {
-            const handleItemPageStatus = () => {
-                changePageStatus('item')
-            }
-            return <Item onClick={handleItemPageStatus} key={item.id} itemInfo={item} />
+            return <Item key={item.id} itemInfo={item} />
         })
     }
     

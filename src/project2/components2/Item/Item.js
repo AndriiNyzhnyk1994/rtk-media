@@ -4,8 +4,9 @@ import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { addToUserFavorites, removeFromUserFavorites } from '../../store2/slices/userSlice2'
 import { store2 } from '../../store2/index2'
+import { changeToItem } from '../../store2/slices/pageStatusSlice'
 
-function Item({ itemInfo, changePageStatus }) {
+function Item({ itemInfo }) {
     const dispatch = useDispatch()
 
     const handleAddToFavorites = () => {
@@ -16,9 +17,8 @@ function Item({ itemInfo, changePageStatus }) {
         dispatch(removeFromUserFavorites(itemInfo))
         console.log(store2.getState())
     }
-
-    const handleChangeStatus = () => {
-        changePageStatus()
+    const handleItemStatus = () => {
+        dispatch(changeToItem({item: itemInfo}))
     }
 
     let isTrimmed = false
@@ -34,15 +34,15 @@ function Item({ itemInfo, changePageStatus }) {
         <div className={s.item + ' hover:bg-gray-200'}>
             {/* ITEM IMAGE */}
             <div className={s.itemImg}>
-                <img onClick={handleChangeStatus} src={itemInfo.mainImage} alt="item-photo" />
+                <img onClick={handleItemStatus} src={itemInfo.mainImage} alt="item-photo" />
             </div>
             {/* ITEM PRICE */}
             <div className={`${s.price} font-bold text-xl`}>
-                <span onClick={handleChangeStatus} className='py-3 px-3'>${itemInfo.price}</span>
+                <span onClick={handleItemStatus} className='py-3 px-3'>${itemInfo.price}</span>
             </div>
             {/* ITEM NAME */}
             <div className={s.itemName}>
-                <span onClick={handleChangeStatus}>{itemTitle} {isTrimmed && '...'}</span>
+                <span onClick={handleItemStatus}>{itemTitle} {isTrimmed && '...'}</span>
             </div>
             {/* BUY OPTIONS */}
             <div className={s.buyOptions}>
@@ -62,7 +62,6 @@ function Item({ itemInfo, changePageStatus }) {
                         size={'1.5rem'}
                     />
                 }
-
             </div>
         </div>
     )
