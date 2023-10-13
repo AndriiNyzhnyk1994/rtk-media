@@ -1,5 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import s from './Favorites.module.css'
+import Item from '../Item/Item';
 
 function Favorites() {
     const dispatch = useDispatch()
