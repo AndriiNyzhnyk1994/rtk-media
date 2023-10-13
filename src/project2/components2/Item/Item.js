@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { addToUserFavorites, removeFromUserFavorites } from '../../store2/slices/userSlice2'
 import { store2 } from '../../store2/index2'
 
-function Item({ itemInfo }) {
+function Item({ itemInfo, changePageStatus }) {
     const dispatch = useDispatch()
 
     const handleAddToFavorites = () => {
@@ -17,6 +17,9 @@ function Item({ itemInfo }) {
         console.log(store2.getState())
     }
 
+    const handleChangeStatus = () => {
+        changePageStatus()
+    }
 
     let isTrimmed = false
     let itemTitle = itemInfo.title
@@ -26,19 +29,20 @@ function Item({ itemInfo }) {
         itemTitle = itemInfo.title.slice(0, 25)
     }
 
+
     return (
         <div className={s.item + ' hover:bg-gray-200'}>
             {/* ITEM IMAGE */}
             <div className={s.itemImg}>
-                <img src={itemInfo.mainImage} alt="item-photo" />
+                <img onClick={handleChangeStatus} src={itemInfo.mainImage} alt="item-photo" />
             </div>
             {/* ITEM PRICE */}
             <div className={`${s.price} font-bold text-xl`}>
-                <span className='py-3 px-3'>${itemInfo.price}</span>
+                <span onClick={handleChangeStatus} className='py-3 px-3'>${itemInfo.price}</span>
             </div>
             {/* ITEM NAME */}
             <div className={s.itemName}>
-                <span>{itemTitle} {isTrimmed && '...'}</span>
+                <span onClick={handleChangeStatus}>{itemTitle} {isTrimmed && '...'}</span>
             </div>
             {/* BUY OPTIONS */}
             <div className={s.buyOptions}>

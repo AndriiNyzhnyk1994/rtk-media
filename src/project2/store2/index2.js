@@ -6,7 +6,8 @@ import { userReducer } from "./slices/userSlice2";
 export const store2 = configureStore({
     reducer: {
         items: itemsReducer,
-        user: userReducer
+        user: userReducer,
+        // pageStatus: pageStatusReducer
     }
 })
 

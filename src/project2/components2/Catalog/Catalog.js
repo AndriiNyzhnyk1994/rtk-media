@@ -2,24 +2,26 @@ import React from 'react'
 import s from './Catalog.module.css'
 import Item from '../Item/Item'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToFavorites, removeFromFavorites } from '../../store2/slices/itemsSlice'
-import { addToUserFavorites, removeFromUserFavorites } from '../../store2/slices/userSlice2'
 
 
-function Catalog() {
+function Catalog({ changePageStatus }) {
     const items = useSelector(state => state.items.products)
 
+
     let content;
-    if (items) {
+    if (items.length) {
         content = items.map(item => {
-            return <Item key={item.id} itemInfo={item} />
+            const handleItemPageStatus = () => {
+                changePageStatus('item')
+            }
+            return <Item onClick={handleItemPageStatus} key={item.id} itemInfo={item} />
         })
     }
+    
 
     return (
         <div className={s.itemsCatalog}>
             {content}
-            
         </div>
     )
 }
